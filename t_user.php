@@ -1,31 +1,3 @@
-<?php
-include "koneksi.php";
-
-$auto = mysqli_query($conn, "select max(kd_kat) as max_code from categories");
-$hasil = mysqli_fetch_array($auto);
-$code = $hasil['max_code'];
-if ($code == NULL) {
-    $urutan = 0;
-} else {
-    $urutan = (int) substr($code, 1, 3);
-}
-$urutan++;
-$huruf = "K";
-$kd_kat = $huruf . sprintf("%03s", $urutan);
-
-if (isset($_POST['simpan'])) {
-    $nm_kat = $_POST['nm_kat'];
-
-    $query = mysqli_query($conn, "INSERT INTO categories(kd_kat, category_name) VALUES ('$kd_kat', '$nm_kat')");
-    if ($query) {
-        echo "<script>alert('Data berhasil ditambahkan!')</script>";
-        header("refresh:0, kategori_produk.php");
-    } else {
-        echo "<script>alert('Data gagal ditambahkan!')</script>";
-        header("refresh:0, kategori_produk.php");
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +5,7 @@ if (isset($_POST['simpan'])) {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Kategori Produk - NndAdmin</title>
+    <title>Manajemen User - NndAdmin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -65,7 +37,7 @@ if (isset($_POST['simpan'])) {
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="index.php" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">NndAdmin</span>
             </a>
@@ -74,9 +46,6 @@ if (isset($_POST['simpan'])) {
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-
-
-                <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
@@ -143,82 +112,108 @@ if (isset($_POST['simpan'])) {
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php">
-                    <i class="bi bi-speedometer2"></i>
+                    <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="kategori_produk.php">
-                    <i class="bi bi-tags"></i>
+                    <i class="bi bi-person"></i>
                     <span>Kategori Produk</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link" href="produk.php">
-                    <i class="bi bi-box"></i>
-                    <span>Data Produk</span>
+                <a class="nav-link collapsed" href="produk.php">
+                    <i class="bi bi-question-circle"></i>
+                    <span>Data_Produk</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="laporan.php">
-                    <i class="bi bi-bar-chart-line"></i>
+                    <i class="bi bi-envelope"></i>
                     <span>Laporan</span>
                 </a>
             </li><!-- End Contact Page Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="users.php">
-                    <i class="bi bi-people"></i>
+                    <i class="bi bi-card-list"></i>
                     <span>Manajemen User</span>
                 </a>
             </li><!-- End Register Page Nav -->
-
-
-
         </ul>
 
     </aside><!-- End Sidebar-->
 
-
     <main id="main" class="main">
+
         <div class="pagetitle">
-            <h1>Kategori Produk</h1>
+            <h1>Manajemen User</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                    <li class="breadcrumb-item">Kategori Produk</li>
+                    <li class="breadcrumb-item">Manajemen User</li>
                     <li class="breadcrumb-item active">Tambah</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">
-
                 <div class="col-lg-6">
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Tambah Kategori Produk</h5>
+                            <h5 class="card-title">Tambah User</h5>
 
-                            <!-- Vertical Form -->
                             <form class="row g-3" method="post">
+
                                 <div class="col-12">
-                                    <label for="kd_kat" class="form-label">Kode Kategori</label>
-                                    <input type="text" class="form-control" id="kd_kat" name="kd_kat" value="<?php echo $kd_kat; ?>" readonly>
-                                </div>
-                                <div class="col-12">
-                                    <label for="nm_kat" class="form-label">Nama Kategori</label>
-                                    <input type="text" class="form-control" id="nm_kat" name="nm_kat" required>
+                                    <label for="name" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
 
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="role" class="form-label">Role</label>
+                                    <select class="form-control" name="role required>
+                                        <option value="">-- Pilih Role --</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="staff">Staff</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="is_active" class="form-label">Status</label>
+                                    <select class="form-control" name="is_active">
+                                        <option value="1">Aktif</option>
+                                        <option value="0">Nonaktif</option>
+                                    </select>
+                                </div>
+                                
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-warning"><a href="Kategori_Produk.php" style="color: black; text-decoration:none;">Kembali</a></button>
+                                    <button type="button" class="btn btn-warning">
+                                        <a href="users.php" style="color: black; text-decoration:none;">Kembali</a>
+                                    </button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>
                                     <button type="submit" class="btn btn-success" name="simpan">Simpan</button>
                                 </div>
+
+                            </form>
+
+                         </div>
+                        </div>
+                        
                             </form><!-- Vertical Form -->
 
                         </div>
@@ -235,11 +230,7 @@ if (isset($_POST['simpan'])) {
             &copy; Copyright <strong><span>NndAdmin</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="">Nadia Viantika</a>
         </div>
     </footer><!-- End Footer -->
 
