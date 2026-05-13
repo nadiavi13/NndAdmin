@@ -135,7 +135,7 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="produk.php">
+        <a class="nav-link collapsed" href="produk.php">
           <i class="bi bi-box"></i>
           <span>Data Produk</span>
         </a>
@@ -149,7 +149,7 @@
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users.php">
+        <a class="nav-link" href="users.php">
           <i class="bi bi-people"></i>
           <span>Manajemen User</span>
         </a>
@@ -172,6 +172,18 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+    <div class="row">
+      <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body mt-3">
+          <a href="t_user.php" class="btn btn-primary">Tambah Data</a>
+        </div>
+      </div>
+    </div>
+</div>
+
 
     <section class="section">
       <div class="row">
@@ -226,7 +238,7 @@
                         </td>
                       </tr>
                     <?php } ?>
-                  </tbody>
+                  </tbody> 
               </table>
               <!-- End Table with stripped rows -->
 

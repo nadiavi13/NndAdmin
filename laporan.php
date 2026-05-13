@@ -17,7 +17,7 @@ $total_barang_keluar = mysqli_num_rows(mysqli_query(
 // total item dengan stok kritis / minimum
 $total_stok_kritis = mysqli_num_rows(mysqli_query(
   $conn,
-  "SELECT id FROM products WHERE stock < min_stock"
+  "SELECT id FROM products WHERE stock <= min_stock"
 ));
 ?>
 <!DOCTYPE html>
@@ -179,7 +179,6 @@ $total_stok_kritis = mysqli_num_rows(mysqli_query(
       </li><!-- End Register Page Nav -->
 
       
-
     </ul>
 
   </aside><!-- End Sidebar-->
