@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logoNndAdmin.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -85,13 +85,7 @@ if (isset($_POST['submit'])) {
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -106,7 +100,7 @@ if (isset($_POST['submit'])) {
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="assets/img/logoNndAdmin.png" alt="">
         <span class="d-none d-lg-block">NndAdmin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -121,7 +115,7 @@ if (isset($_POST['submit'])) {
                 href="#"
                 data-bs-toggle="dropdown">
                 <img
-                  src="assets/img/profile-img.jpg"
+                  src="assets/img/kartun.avif"
                   alt="Profile"
                   class="rounded-circle" /> </a><!-- End Profile Iamge Icon -->
 
@@ -162,7 +156,7 @@ if (isset($_POST['submit'])) {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.php">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-speedometer2"></i>
           <span>Dashboard</span>
         </a>
@@ -176,7 +170,7 @@ if (isset($_POST['submit'])) {
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="produk.php">
+        <a class="nav-link " href="produk.php">
           <i class="bi bi-box"></i>
           <span>Data Produk</span>
         </a>

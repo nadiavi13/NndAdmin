@@ -118,7 +118,7 @@ $html = '
 <hr>
 <h3>LAPORAN STOK MINIMUM</h3>
 <table>
-  <table>
+  
      <thead>
          <tr>
             <th>No</th>

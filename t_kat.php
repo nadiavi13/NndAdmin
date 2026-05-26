@@ -48,7 +48,7 @@ if (isset($_POST['simpan'])) {
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/logoNndAdmin.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -76,7 +76,7 @@ if (isset($_POST['simpan'])) {
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/logoNndAdmin.png" alt="">
                 <span class="d-none d-lg-block">NndAdmin</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -90,7 +90,7 @@ if (isset($_POST['simpan'])) {
                 href="#"
                 data-bs-toggle="dropdown">
                 <img
-                  src="assets/img/profile-img.jpg"
+                  src="assets/img/kartun.avif"
                   alt="Profile"
                   class="rounded-circle" /> </a><!-- End Profile Iamge Icon -->
 
@@ -138,14 +138,14 @@ if (isset($_POST['simpan'])) {
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="kategori_produk.php">
+                <a class="nav-link" href="kategori_produk.php">
                     <i class="bi bi-tags"></i>
                     <span>Kategori Produk</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link" href="produk.php">
+                <a class="nav-link collapsed" href="produk.php">
                     <i class="bi bi-box"></i>
                     <span>Data Produk</span>
                 </a>
