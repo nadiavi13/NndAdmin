@@ -216,7 +216,7 @@ if ($query) {
 
                                 <div class="col-12">
                                     <label for="role" class="form-label">Role</label>
-                                    <select class="form-control" name="role required>
+                                    <select class="form-control" name="role" required>
                                         <option value="">-- Pilih Role --</option>
                                         <option value="admin">Admin</option>
                                         <option value="staff">Staff</option>
